@@ -15,6 +15,14 @@ def home():
 def health():
     return jsonify({"status": "ok"})
 
+@app.route("/music/test")
+def music_test():
+    return jsonify({
+        "status": "ready",
+        "message": "Music API is working",
+        "format": "mp3"
+    })
+
 if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 10000))
